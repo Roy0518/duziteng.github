@@ -1,0 +1,22 @@
+<!--地图按钮-->
+        <layer name="skin_btn_littlemap"      style="skin_base|skin_glow" crop="64|0|64|64"   align="righttop"  x="15"    y="50"  scale="0.5" alpha="1" onclick="openmap()" />
+        <!--插入底层容器-->
+        <layer name="mapcontainer" keep="true" type="container" bgcolor="0x000000" bgalpha="0" align="righttop" x="-346" y="100" width="346" height="354">
+            <!--插入地图图片    -->
+            <layer name="map" url="map.png" align="left" x="0" y="0" width="346" height="354" handcursor="false" >
+                <!-- 户型图雷达指针 -->
+                <plugin name="radars" url="%SWFPATH%/plugins/radar.swf" alturl="%SWFPATH%/plugins/radar.js" editmode="true" zorder="1" keep="true" heading="0"  parent="mapbar" align="lefttop" edge="center" x="156" y="166" linecolor="0"  fillcolor="0xFF9900" scale="0.5" />
+                <plugin name="activespot" url="%SWFPATH%/skin/current_pano.png" keep="true" align="lefttop" x="11" y = "11" edge="center" visible="true" zorder="6" />
+                <!-- 户型图雷达指针  -->
+                <!--插入热点-->
+                <layer name="spot1" url="%SWFPATH%/skin/hot.png"  align="lefttop" edge="center" x="156" y="166" zorder="2" onclick="loadscene(scene_10);" />
+                <layer name="spot2" url="%SWFPATH%/skin/hot.png"  align="lefttop" edge="center" x="111" y="216" zorder="2" onclick="loadscene(scene_11);" />
+            </layer>
+        </layer>
+
+
+
+
+
+
+        
