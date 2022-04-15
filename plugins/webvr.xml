@@ -301,7 +301,7 @@
 	
 	<layer name="webvr_enterbutton" keep="true" vr="true"
 	       style="webvr_button_style"
-	       html="Enter VR"
+	       html="进入 VR模式"
 	       align="top" y="24"
 	       autoalpha="true" alpha="0.0"
 	       onclick="webvr.enterVR();"
@@ -309,7 +309,7 @@
 
 	<layer name="webvr_exitbutton" keep="true" vr="true"
 	       style="webvr_button_style"
-	       html="Exit VR"
+	       html="退出 VR模式"
 	       align="top" y="24"
 	       autoalpha="true" alpha="0.0"
 	       onclick="webvr.exitVR();"
@@ -317,7 +317,7 @@
 
 	<layer name="webvr_setupbutton" keep="true" vr="true"
 	       style="webvr_button_style"
-	       html="VR Setup"
+	       html="VR 分屏设置"
 	       align="bottom" y="24"
 	       autoalpha="true" alpha="0.0"
 	       onclick="vrsetup_open();"
@@ -658,7 +658,7 @@
 			vrsetup_dlg_addline(dlg, 'Rendering Resolution:', 'font-size:16px;');
 			var renderres = vrsetup_dlg_addline(dlg, '');
 			vrsetup_dlg_addspace(dlg);
-			vrsetup_dlg_addline(dlg, 'CLOSE', '', vrsetup_close);
+			vrsetup_dlg_addline(dlg, '关闭', '', vrsetup_close);
 			vrsetup_dlg_finish(dlg);
 			
 			return dlg;
@@ -668,12 +668,12 @@
 		{
 			// MobileVR / Cardboard rendering
 			var dlg = vrsetup_dlg_create(0 ? 'hotspot' : 'layer');
-			vrsetup_dlg_addline(dlg, 'MobileVR SETUP');
+			vrsetup_dlg_addline(dlg, '手机VR设置');
 			vrsetup_dlg_addspace(dlg);
-			vrsetup_dlg_addline(dlg, 'Screensize (inch):', 'font-size:16px;')
+			vrsetup_dlg_addline(dlg, '屏幕大小（英寸）:', 'font-size:16px;')
 			vrsetup_dlg_addctrl(dlg, 1.0, function(change){ var ss = Number(webvr.mobilevr_screensize); if (isNaN(ss)) ss = 5.0; if (change < 0) { ss = Math.max(4.0, ss - 0.1); webvr.mobilevr_screensize = ss; } else if (change > 0) { ss = Math.min(10.0, ss + 0.1); webvr.mobilevr_screensize = ss; } return ss.toFixed(1); });
 			vrsetup_dlg_addspace(dlg);
-			vrsetup_dlg_addline(dlg, 'VR Headset Preset:', 'font-size:16px;')
+			vrsetup_dlg_addline(dlg, 'vr盒子种类设置:', 'font-size:16px;')
 			var ctrl_ps = vrsetup_dlg_addctrl(dlg, 1.0, function(change)
 			{
 				var preset_index = -1;
@@ -720,7 +720,7 @@
 				return 'Custom';
 			});
 			vrsetup_dlg_addspace(dlg);
-			vrsetup_dlg_addline(dlg, 'Customize Headset', 'font-size:25px;', function()
+			vrsetup_dlg_addline(dlg, '自定义头显设置', 'font-size:25px;', function()
 			{
 				vrsetup_dlg_remove(dlg); 
 				dlg=null; 
@@ -730,7 +730,7 @@
 			});
 			vrsetup_dlg_addline(dlg, '(Interactive Adjustment in VR)', 'font-size:12px;');
 			vrsetup_dlg_addspace(dlg);
-			vrsetup_dlg_addline(dlg, 'CLOSE', '', vrsetup_close);
+			vrsetup_dlg_addline(dlg, '关闭', '', vrsetup_close);
 			vrsetup_dlg_finish(dlg);
 			
 			return dlg;
@@ -742,7 +742,7 @@
 			var ctrl_preset, ctrl_fov, ctrl_ild, ctrl_stl, ctrl_ttl, ctrl_k1, ctrl_k2, ctrl_os;
 			
 			var dlg = vrsetup_dlg_create('hotspot');
-			vrsetup_dlg_addline(dlg, 'MobileVR SETUP');
+			vrsetup_dlg_addline(dlg, '手机VR设置');
 			vrsetup_dlg_addspace(dlg);
 			vrsetup_dlg_addline(dlg, 'Preset:', 'font-size:16px;')
 			
@@ -825,7 +825,7 @@
 			vrsetup_dlg_addline(dlg, 'Oversampling:', 'font-size:16px;');
 			ctrl_os = vrsetup_dlg_addctrl(dlg, 0.25, function(change){ var p = webvr.oversampling; if (change < 0) { p = Math.max(0.2, Number(p) - 0.1); webvr.oversampling = p;  } else if (change > 0) { p = Math.min(4.0, Number(p) + 0.1); webvr.oversampling = p;  } return p.toFixed(1); });
 			vrsetup_dlg_addspace(dlg);
-			vrsetup_dlg_addline(dlg, 'CLOSE', '', vrsetup_close);
+			vrsetup_dlg_addline(dlg, '关闭', '', vrsetup_close);
 			vrsetup_dlg_finish(dlg);
 			
 			return dlg;
